@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <classPathEntry location="C:\Users\Heron\Desktop\Payment System\mall\mysql-connector-java-5.1.6.jar" />
+    <classPathEntry location="C:\Users\Heron\Desktop\Payment System\mysql-connector-java-5.1.6.jar" />
 
     <context id="DB2Tables" targetRuntime="MyBatis3">
 
@@ -38,10 +38,11 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="mall_order" domainObjectName="Order" enableCountByExample="false" enableDeleteByExample="false"
+        <!--<table tableName="mall_order" domainObjectName="Order" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
-
         <table tableName="mall_order_item" domainObjectName="OrderItem" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <table tableName="mall_user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
 
     </context>
