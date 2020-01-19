@@ -42,7 +42,7 @@
                enableSelectByExample="false" enableUpdateByExample="false"/>
         <table tableName="mall_order_item" domainObjectName="OrderItem" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <table tableName="mall_user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false"
+        <table tableName="mall_category" domainObjectName="Category" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
 
     </context>
