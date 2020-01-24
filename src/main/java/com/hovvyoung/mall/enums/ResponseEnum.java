@@ -22,7 +22,7 @@ public enum ResponseEnum {
 
     PRODUCT_OFF_SALE_OR_DELETE(12, "product no long sold or be deleted"),
 
-    PRODUCT_NOT_EXIST(13, "商品不存在"),
+    PRODUCT_NOT_EXIST(13, "product not exist"),
 
     PROODUCT_STOCK_ERROR(14, "库存不正确"),
 

@@ -11,12 +11,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.Objects;
 
 @RestController
 @Slf4j
@@ -32,15 +33,14 @@ public class UserController {
 
     //json format body needs @RequestBody
     @PostMapping("/user/register")
-    public ResponseVo register(@Valid @RequestBody UserRegisterForm userRegisterForm,
-                               BindingResult bindingResult) {
+    public ResponseVo register(@Valid @RequestBody UserRegisterForm userRegisterForm) {
 
-        if (bindingResult.hasErrors()) {
-            log.info("params inconsistent for registration, {} {}",
-                    Objects.requireNonNull(bindingResult.getFieldError()).getField(),
-                    bindingResult.getFieldError().getDefaultMessage());
-            return ResponseVo.error(ResponseEnum.PARAM_ERROR, bindingResult);
-        }
+//        if (bindingResult.hasErrors()) {
+//            log.info("params inconsistent for registration, {} {}",
+//                    Objects.requireNonNull(bindingResult.getFieldError()).getField(),
+//                    bindingResult.getFieldError().getDefaultMessage());
+//            return ResponseVo.error(ResponseEnum.PARAM_ERROR, bindingResult);
+//        }
 
         User user = new User();
         // copy userRegisterForm obj to user obj
@@ -53,15 +53,14 @@ public class UserController {
     // Another way to get session HttpServletRequest httpServletRequest.getSession();
     @PostMapping("/user/login")
     public ResponseVo<User> login(@Valid @RequestBody UserLoginForm userLoginForm,
-                                  BindingResult bindingResult,
                                   HttpSession session) {
 
-        if (bindingResult.hasErrors()) {
-            log.info("params inconsistent for login, {} {}",
-                    Objects.requireNonNull(bindingResult.getFieldError()).getField(),
-                    bindingResult.getFieldError().getDefaultMessage());
-            return ResponseVo.error(ResponseEnum.PARAM_ERROR, bindingResult);
-        }
+//        if (bindingResult.hasErrors()) {
+//            log.info("params inconsistent for login, {} {}",
+//                    Objects.requireNonNull(bindingResult.getFieldError()).getField(),
+//                    bindingResult.getFieldError().getDefaultMessage());
+//            return ResponseVo.error(ResponseEnum.PARAM_ERROR, bindingResult);
+//        }
 
         ResponseVo<User> userResponseVo  = userService.login(userLoginForm.getUsername(), userLoginForm.getPassword());
 
