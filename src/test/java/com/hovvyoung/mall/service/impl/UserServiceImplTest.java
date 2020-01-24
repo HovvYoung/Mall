@@ -1,4 +1,4 @@
-package com.hovvyoung.mall.service;
+package com.hovvyoung.mall.service.impl;
 
 import com.hovvyoung.mall.MallApplicationTests;
 import com.hovvyoung.mall.enums.ResponseEnum;
