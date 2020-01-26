@@ -2,8 +2,11 @@ package com.hovvyoung.mall.service;
 
 import com.hovvyoung.mall.form.CartAddForm;
 import com.hovvyoung.mall.form.CartUpdateForm;
+import com.hovvyoung.mall.pojo.Cart;
 import com.hovvyoung.mall.vo.CartVo;
 import com.hovvyoung.mall.vo.ResponseVo;
+
+import java.util.List;
 
 public interface ICartService {
 
@@ -20,4 +23,6 @@ public interface ICartService {
     ResponseVo<CartVo> unSelectAll(Integer uid);
 
     ResponseVo<Integer> sum(Integer uid);
+
+    List<Cart> listForCart(Integer uid);
 }
