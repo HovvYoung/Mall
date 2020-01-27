@@ -14,4 +14,5 @@ public interface IOrderService {
 
     ResponseVo cancel(Integer uid, Long orderNo);
 
+    void paid(Long orderNo);
 }

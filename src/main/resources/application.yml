@@ -7,6 +7,11 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+  rabbitmq:
+    addresses: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
@@ -21,3 +26,4 @@ server:
   servlet:
     session:
       timeout: 600
+  port: 8081
